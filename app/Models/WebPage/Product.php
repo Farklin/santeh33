@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Product extends Model
 {
     use HasFactory;
+
+    public function page()
+    {
+        return $this->belongsTo(Page::class, 'id'); 
+    }
 }

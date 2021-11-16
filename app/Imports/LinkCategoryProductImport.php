@@ -28,10 +28,8 @@ class LinkCategoryProductImport implements ToCollection, WithChunkReading, Shoul
                 $link->product_id = $row['product_id'];
                 $link->category_id = $row['category_id'];
                 $link->save(); 
-            }catch (\Illuminate\Database\QueryException $e) {
-                report($e);
-        
-                return false;
+            }catch (\Illuminate\Database\QueryException $e) {      
+            
             }
         }
     }

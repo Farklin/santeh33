@@ -10,4 +10,10 @@ class LinkCategoryProduct extends Model
     use HasFactory;
 
     protected $table = 'link_category_product'; 
+    protected $fillable = array(
+        'category_id',
+        'product_id',
+        // The rest of the column names that you want it to be mass-assignable.
+    );
+    
 }
