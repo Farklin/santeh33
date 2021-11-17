@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use Maatwebsite\Excel\Facades\Excel;
-use App\Imports\LinkCategoryProductImport;
+use App\Imports\ProductImageImport;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,5 +15,5 @@ use App\Imports\LinkCategoryProductImport;
 */
 
 Route::get('/', function () {
-   Excel::import(new LinkCategoryProductImport , 'link_product.xlsx'); 
+   Excel::import(new ProductImageImport , 'image_product.xlsx'); 
 });
