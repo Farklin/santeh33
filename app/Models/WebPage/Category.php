@@ -11,7 +11,7 @@ class Category extends Model
 
     public function page()
     {
-        return $this->belongsTo(Page::class, 'id'); 
+        return $this->belongsTo(Page::class, 'id');
     }
 
     /**
@@ -21,11 +21,11 @@ class Category extends Model
      */
     public function children()
     {
-        return $this->hasMany(Page::class, 'id'); 
+        return $this->hasMany(Category::class, 'category_id');
     }
 
     public function products()
     {
-        return $this->belongsToMany(Product::class, "link_category_product", 'category_id', 'product_id' ); 
+        return $this->belongsToMany(Product::class, "link_category_product", 'category_id', 'product_id');
     }
 }

@@ -1,8 +1,14 @@
 <?php
 
+
 use Illuminate\Support\Facades\Route;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Imports\ProductImageImport;
+use App\Imports\ProductImport;
+use App\Imports\CategoryImport;
+use App\Imports\LinkCategoryProductImport;
+use App\Models\WebPage\Category;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,5 +21,8 @@ use App\Imports\ProductImageImport;
 */
 
 Route::get('/', function () {
-   Excel::import(new ProductImageImport , 'image_product.xlsx'); 
+   // Excel::import(new CategoryImport, 'category.xlsx');
+   // Excel::import(new ProductImport, 'products1.xlsx');
+   // Excel::import(new LinkCategoryProductImport, 'link_product.xlsx');
+   // Excel::import(new ProductImageImport, 'image_product.xlsx');
 });
