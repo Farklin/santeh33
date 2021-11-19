@@ -48,10 +48,7 @@ Route::get('/category', function (Request $request) {
 
 
 Route::get('/category/{id}', function (Request $request, $id) {
-    $products = Category::find($id)->products; 
-    $products_api = Cache::remember('category' . $id, 3600, function ($products) {
-        return new ProductCollection($products); 
-    });
-    return $products_api->toJson();  
+   
+    return Category::getCacheProducts($id); 
 }); 
 
