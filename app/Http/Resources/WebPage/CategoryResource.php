@@ -3,7 +3,7 @@
 namespace App\Http\Resources\WebPage;
 
 use Illuminate\Http\Resources\Json\JsonResource;
-
+use App\Http\Resources\WebPage\CategoryCollection; 
 class CategoryResource extends JsonResource
 {
     /**
@@ -18,7 +18,7 @@ class CategoryResource extends JsonResource
             'id' => $this->id,
             'title' => $this->page->title,
             'content' => $this->page->content,
-            'child' => $this->children, 
+            'child' =>  new CategoryCollection($this->children), 
         ];
     }
 }

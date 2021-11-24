@@ -11,7 +11,7 @@ use App\Http\Resources\WebPage\ProductCollection;
 class Category extends Model
 {
     use HasFactory;
-
+    
     public function page()
     {
         return $this->belongsTo(Page::class, 'id');
@@ -49,4 +49,19 @@ class Category extends Model
         ); 
         return $products; 
     }
+
+    public static function getAllProducts($categoryId, $products = null)
+    {      
+        //Не работает 
+        if ($products === null) {
+            $products = collect();   
+         }
+         $category = Category::find($categoryId); 
+         $products = $products->merge($category->product);
+         $category->children->each(function($child) {
+             $products = self::getAllProducts($child->id, $products);
+         });
+       
+         return $products;
+    }   
 }

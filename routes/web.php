@@ -23,6 +23,6 @@ use App\Models\WebPage\Category;
 Route::get('/', function () {
    // Excel::import(new CategoryImport, 'category.xlsx');
    // Excel::import(new ProductImport, 'products1.xlsx');
-   // Excel::import(new LinkCategoryProductImport, 'link_product.xlsx');
+   // Excel::import(new LinkCategoryProductImport, 'link_product_1.xlsx');
    // Excel::import(new ProductImageImport, 'image_product.xlsx');
 });
